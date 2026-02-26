@@ -1,7 +1,9 @@
-package array;// Problem:Check if Array Is Sorted and Rotated
+// Problem:Check if Array Is Sorted and Rotated
 // Link: https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/
 // Time: O(n*2)
 // Space: O(1)
+
+package array;
 
 public class Check_if_Array_Is_Sorted_and_Rotated {
     public boolean checkSorted(int[] arr){

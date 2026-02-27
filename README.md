@@ -10,23 +10,26 @@ I solve problems consistently to improve:
 ---
 
 ## 📂 Project Structure
+## 📂 Project Structure
+
+```text
 LeetCode/
 │
 ├── src/
-│ └── array/
-│ ├── Easy/
-│ │ ├── Check_if_Array_Is_Sorted_and_Rotated.java
-│ │ ├── Move_Zeroes.java
-│ │ └── Remove_Duplicates_from_Sorted_Array.java
-│ │
-│ ├── Medium/
-│ │ └── Rotate_Array.java
-│ │
-│ └── Hard/
+│   └── array/
+│       ├── Easy/
+│       │   ├── Check_if_Array_Is_Sorted_and_Rotated.java
+│       │   ├── Move_Zeroes.java
+│       │   └── Remove_Duplicates_from_Sorted_Array.java
+│       │
+│       ├── Medium/
+│       │   └── Rotate_Array.java
+│       │
+│       └── Hard/
 │
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 

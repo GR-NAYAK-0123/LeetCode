@@ -18,5 +18,21 @@ public class Rotate_Array {
         for(int i = 0;i<rotation;i++){
             nums[i] = temp[i];
         }
+
+        // Optimal Solution
+//        int rotation = k % nums.length;
+//        int length = nums.length;
+//        rotateArray(nums,length-rotation,length-1);
+//        rotateArray(nums,0,length-rotation-1);
+//        rotateArray(nums,0,length-1);
     }
+
+//    public void rotateArray(int arr[], int start, int end){
+//        int middle = (start + end) / 2;
+//        for(int i = start;i<=middle;i++){
+//            int firstValue = arr[i];
+//            int secondValue = arr[(start+end)-i];
+//            arr[i] = secondValue;
+//            arr[(start+end)-i] = firstValue;
+//        }
 }

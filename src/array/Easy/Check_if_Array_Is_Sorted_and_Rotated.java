@@ -3,7 +3,7 @@
 // Time: O(n*2)
 // Space: O(1)
 
-package array;
+package array.Easy;
 
 public class Check_if_Array_Is_Sorted_and_Rotated {
     public boolean checkSorted(int[] arr){

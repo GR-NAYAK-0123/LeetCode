@@ -1,4 +1,4 @@
-# 🚀 LeetCode Java Solutions
+# LeetCode Java Solutions
 
 This repository contains my solutions to LeetCode problems using **Java**.
 
@@ -9,8 +9,7 @@ I solve problems consistently to improve:
 
 ---
 
-## 📂 Project Structure
-## 📂 Project Structure
+## Project Structure
 
 ```text
 LeetCode/
@@ -33,10 +32,9 @@ LeetCode/
 
 ---
 
-## 🧠 Topics Covered
+##  Topics Covered
 
 - Arrays  
-- Two Pointer Technique  
 - In-place Algorithms  
 - Rotation Problems  
 - Edge Case Handling  
@@ -45,13 +43,13 @@ More problems will be added regularly.
 
 ---
 
-## ⚙️ Language
+##  Language
 
 - Java
 
 ---
 
-## 🎯 Goal
+##  Goal
 
 To become a strong Java Backend Developer by mastering DSA.
 

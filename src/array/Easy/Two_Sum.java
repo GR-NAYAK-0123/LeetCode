@@ -20,4 +20,18 @@ public class Two_Sum {
         }
         return new int[] {0,0};
     }
+
+    //A little bit Optimal One having time complexity - o(n log(n)) and space complexity - O(n)
+    public int[] twoSum1(int[] nums, int target) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i = 0;i<nums.length;i++){
+            if(map.containsKey(target - nums[i])){
+                return new int[]{i, map.get(target- nums[i])};
+            }
+            else{
+                map.put(nums[i],i);
+            }
+        }
+        return new int[]{0,0};
+    }
 }

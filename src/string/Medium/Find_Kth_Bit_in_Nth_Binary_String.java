@@ -24,4 +24,28 @@ public class Find_Kth_Bit_in_Nth_Binary_String {
         }
         return store[n-1].charAt(k-1);
     }
+
+    // Most Optimal solution for this problem by using Recursion
+    // Time : O(n)
+    // Space : O(n)
+    public char findKthBit1(int n, int k) {
+        // Optimal One by using Recursion
+
+        //Base case
+        if(n == 1){
+            return '0';
+        }
+
+        int length = (1 << n) - 1;
+        int mid = (length / 2) + 1;
+        if(k < mid){
+            return findKthBit1(n-1, k);
+        }
+        else if(k == mid){
+            return '1';
+        }
+        else{
+            return findKthBit1(n-1, length-(k-1)) == '0' ? '1' : '0';
+        }
+    }
 }

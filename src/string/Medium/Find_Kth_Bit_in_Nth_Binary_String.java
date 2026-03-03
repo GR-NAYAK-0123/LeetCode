@@ -6,11 +6,7 @@ package string.Medium;
 
 public class Find_Kth_Bit_in_Nth_Binary_String {
     public String reverse(String s){
-        StringBuilder result = new StringBuilder("");
-        for(int i = s.length()-1;i>=0;i--){
-            result.append(s.charAt(i));
-        }
-        return result.toString();
+        return new StringBuilder(s).reverse().toString();
     }
     public String invert(String s){
         StringBuilder result = new StringBuilder("");

@@ -20,10 +20,8 @@ public class Special_Positions_in_a_Binary_Matrix {
         int count = 0;
         for(int i = 0;i<mat.length;i++){
             for(int j = 0;j<mat[0].length;j++){
-                if(mat[i][j] == 1){
-                    if(row[i] <= 1 && column[j] <= 1){
-                        count++;
-                    }
+                if(mat[i][j] == 1 && row[i] <= 1 && column[j] <= 1){
+                    count++;
                 }
             }
         }

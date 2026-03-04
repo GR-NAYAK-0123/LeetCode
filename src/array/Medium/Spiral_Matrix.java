@@ -15,21 +15,26 @@ public class Spiral_Matrix {
         int top = 0;
         List<Integer> result = new ArrayList<>();
         while(left <= right && top <= bottom){
+            // This is from left -> right
             for(int i = left;i<=right;i++){
                 result.add(matrix[top][i]);
             }
             top++;
+            // This is from top -> bottom
             for(int i = top;i<=bottom;i++){
                 result.add(matrix[i][right]);
             }
             right--;
+
             if(top <= bottom){
+                // This is from right -> left
                 for(int i = right;i>=left;i--){
                     result.add(matrix[bottom][i]);
                 }
                 bottom--;
             }
             if(right >= left){
+                // This is from bottom -> top
                 for(int i = bottom;i>=top;i--){
                     result.add(matrix[i][left]);
                 }

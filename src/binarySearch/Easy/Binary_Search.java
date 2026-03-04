@@ -6,6 +6,7 @@
 package binarySearch.Easy;
 
 public class Binary_Search {
+    // Iterative way
     public int search(int[] nums, int target) {
         int start = 0;
         int end = nums.length-1;
@@ -34,8 +35,8 @@ public class Binary_Search {
         else
             return find(nums, mid+1, end, target);
     }
+    // Recursive way
     public int search1(int[] nums, int target) {
-        // Recursive way
         int start = 0;
         int end = nums.length-1;
         return find(nums, start, end, target);

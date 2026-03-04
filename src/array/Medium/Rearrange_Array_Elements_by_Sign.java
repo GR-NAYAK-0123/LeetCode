@@ -8,7 +8,7 @@ package array.Medium;
 public class Rearrange_Array_Elements_by_Sign {
     //Brute force Approach
     public int[] rearrangeArray(int[] nums) {
-        int result[] = new int[nums.length];
+        int[] result = new int[nums.length];
         int j = 0;
         for(int i = 0;i<nums.length;i++){
             if(nums[i] > 0){

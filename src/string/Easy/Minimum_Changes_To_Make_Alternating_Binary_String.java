@@ -27,4 +27,21 @@ public class Minimum_Changes_To_Make_Alternating_Binary_String {
         }
         return Math.min(startWith_0, startWith_1);
     }
+    //Approach - 2
+    public int minOperations1(String s) {
+        int length = s.length();
+        int startWith_0 = 0;
+        for(int i = 0;i<length;i++){
+            if(i % 2 == 0){
+                if(s.charAt(i) == '1')
+                    startWith_0++;
+            }
+            else{
+                if(s.charAt(i) == '0')
+                    startWith_0++;
+            }
+        }
+        int startWith_1 = length - startWith_0;
+        return Math.min(startWith_0, startWith_1);
+    }
 }

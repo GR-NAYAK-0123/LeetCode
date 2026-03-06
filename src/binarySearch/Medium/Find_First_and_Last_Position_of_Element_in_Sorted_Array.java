@@ -3,7 +3,7 @@
 // Time: O(log(n)) + O(log(n))
 // Space: O(1)
 
-package string.Easy;
+package binarySearch.Medium;
 
 public class Find_First_and_Last_Position_of_Element_in_Sorted_Array {
     public int[] searchRange(int[] nums, int target) {

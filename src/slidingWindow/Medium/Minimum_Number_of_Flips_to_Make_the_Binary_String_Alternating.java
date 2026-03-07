@@ -1,15 +1,15 @@
 // Problem: Minimum Number of Flips to Make the Binary String Alternating
 // Link: https://leetcode.com/problems/minimum-number-of-flips-to-make-the-binary-string-alternating/description/
 // Time: O(n)
-// Space: O(1)
+// Space: O(n) + O(n)
 
 package slidingWindow.Medium;
 
 public class Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating {
     public int minFlips(String s) {
         int length = s.length();
-        StringBuilder s1 = new StringBuilder("");
-        StringBuilder s2 = new StringBuilder("");
+        StringBuilder s1 = new StringBuilder();
+        StringBuilder s2 = new StringBuilder();
         for(int i = 0;i<2 * s.length();i++){
             if(i % 2 == 0){
                 s1.append('0');
@@ -55,7 +55,7 @@ public class Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating {
         }
         return result;
     }
-    // Better Approach
+    // Better Approach with time complexity - O(n) and space complexity - O(1)
     public int minFlips1(String s) {
         int length = s.length();
         int result = Integer.MAX_VALUE;

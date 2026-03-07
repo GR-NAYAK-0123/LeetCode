@@ -55,4 +55,51 @@ public class Minimum_Number_of_Flips_to_Make_the_Binary_String_Alternating {
         }
         return result;
     }
+    // Better Approach
+    public int minFlips1(String s) {
+        int length = s.length();
+        int result = Integer.MAX_VALUE;
+        int flip1 = 0;
+        int flip2 = 0;
+
+        int i = 0;
+        int j = 0;
+
+        while(j < 2 * length){
+
+            char expectedCharS1 = (j % 2) == 0 ? '0' : '1';
+            char expectedCharS2 = (j % 2) == 0 ? '1' : '0';
+
+            if(s.charAt(j % length) != expectedCharS1){
+                flip1++;
+            }
+            if(s.charAt(j % length) != expectedCharS2){
+                flip2++;
+            }
+
+
+            if(j-i+1 > length){ // For shrink the window from left
+                expectedCharS1 = (i % 2) == 0 ? '0' : '1';
+                expectedCharS2 = (i % 2) == 0 ? '1' : '0';
+
+                if(s.charAt(j % length) != expectedCharS1){
+                    flip1--;
+                }
+
+                if(s.charAt(j % length) != expectedCharS2){
+                    flip2--;
+                }
+
+                i++;
+            }
+
+            if(j-i+1 == length){
+                result = Math.min(result, flip1);
+                result = Math.min(result, flip2);
+            }
+            j++;
+        }
+        return result;
+
+    }
 }

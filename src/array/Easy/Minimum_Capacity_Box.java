@@ -6,6 +6,7 @@
 package array.Easy;
 
 public class Minimum_Capacity_Box {
+    // Basic approach for solving this problem with time complexity - O(n)
     public int minimumIndex(int[] capacity, int itemSize) {
         int n = capacity.length;
         int smallestIndex = -1;

@@ -2,6 +2,7 @@
 // Link: https://takeuforward.org/plus/dsa/problems/union-of-two-sorted-arrays
 // Time: O(firstArray) + O(secondArray) + O(set)
 // Space: O(set)
+
 package array.Easy;
 
 import java.util.HashSet;

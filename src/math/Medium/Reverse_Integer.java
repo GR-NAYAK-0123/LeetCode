@@ -1,6 +1,6 @@
 // Problem: Reverse Integer
 // Link: https://leetcode.com/problems/reverse-integer/description/
-// Time: O(n)
+// Time: O(log10(n))  //Because here we are dividing always by 10
 // Space: O(1)
 
 package math.Medium;

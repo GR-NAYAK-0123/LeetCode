@@ -1,6 +1,6 @@
 // Problem: Palindrome Number
 // Link: https://leetcode.com/problems/palindrome-number/description/
-// Time: O(n)
+// Time: O(log10(n))
 // Space: O(1)
 
 package math.Easy;

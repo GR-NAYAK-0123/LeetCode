@@ -39,7 +39,8 @@ public class Main {
         }
         System.out.println();
 
-        selection(arr);
+        //selection(arr);
+        bubble(arr);
 
         System.out.println("After sorting");
         for(int value : arr){

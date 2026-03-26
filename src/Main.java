@@ -29,6 +29,18 @@ public class Main {
             }
         }
     }
+    public static void insertion(int[] arr){
+        for(int i = 1;i<arr.length;i++){
+            int j = i;
+            while(j > 0 && arr[j] < arr[j-1]){
+                //swap
+                int temp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
+                j--;
+            }
+        }
+    }
     public static void main(String[] args) {
         System.out.println("LeetCode");
 
@@ -40,7 +52,8 @@ public class Main {
         System.out.println();
 
         //selection(arr);
-        bubble(arr);
+        //bubble(arr);
+        insertion(arr);
 
         System.out.println("After sorting");
         for(int value : arr){

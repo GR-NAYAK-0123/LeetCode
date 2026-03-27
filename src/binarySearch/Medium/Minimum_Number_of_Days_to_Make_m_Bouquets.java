@@ -1,6 +1,6 @@
 // Problem: Minimum Number of Days to Make m Bouquets
 // Link: https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/description/
-// Time: O(n) + O(log(Maximum value of that array)) * O(n)
+// Time: O(n) + O(log(Minimum to maximum value of the array)) * O(n)
 // Space: O(1)
 
 package binarySearch.Medium;

@@ -1,6 +1,6 @@
 // Problem: Koko Eating Bananas
 // Link: https://leetcode.com/problems/koko-eating-bananas/description/
-// Time: O(log(Maximum Value of the Array)) * O(n)
+// Time: O(n) for finding the maximum element from the array + O(log(Maximum Value of the Array)) * O(n)
 // Space: O(1)
 
 package binarySearch.Medium;

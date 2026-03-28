@@ -79,10 +79,41 @@ public class Main {
         divide(arr, mid+1, end);
         merge(arr, start, mid, end);
     }
+    public static int findPivotIndex(int[] arr, int start, int end){
+        int i = start;
+        int j = end;
+        int pivot = arr[start];
+        while(i < j){
+            while(arr[i] <= pivot && i < end){
+                i++;
+            }
+            while(arr[j] > pivot && j > start){
+                j--;
+            }
+            if(i < j){
+                //swap
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        // swap with pivot element
+        int temp = arr[start];
+        arr[start] = arr[j];
+        arr[j] = temp;
+        return j;
+    }
+    public static void quick(int[] arr, int start, int end){
+        if(start >= end) return;
+
+        int pivotIndex = findPivotIndex(arr, start, end);
+        quick(arr, start, pivotIndex-1);
+        quick(arr, pivotIndex+1, end);
+    }
     public static void main(String[] args) {
         System.out.println("LeetCode");
 
-        int[] arr = new int[] {20,42,23,19,7,80,3,12,45,12,67,34,1};
+        int[] arr = new int[] {20,42,23,19,1};
         System.out.println("Before sorting");
         for(int value : arr){
             System.out.print(value+" ");
@@ -92,7 +123,8 @@ public class Main {
         //selection(arr);
         //bubble(arr);
         //insertion(arr);
-        divide(arr, 0, arr.length-1);
+        //divide(arr, 0, arr.length-1);
+        quick(arr, 0, arr.length-1);
 
         System.out.println("After sorting");
         for(int value : arr){

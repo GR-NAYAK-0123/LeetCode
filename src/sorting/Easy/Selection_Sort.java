@@ -22,4 +22,22 @@ public class Selection_Sort {
             arr[minIdx] = temp;
         }
     }
+
+    // This is recursive Selection sort
+    public static void recursive_selection(int[] arr, int start){
+        if(start == arr.length-1) return;
+
+        int minIdx = start;
+        for(int i = start + 1;i<arr.length;i++){
+            if(arr[i] < arr[minIdx]) minIdx = i;
+        }
+
+        // Swap the starting index with minimum value index
+        int temp = arr[start];
+        arr[start] = arr[minIdx];
+        arr[minIdx] = temp;
+
+        // Call for next function
+        recursive_selection(arr, start+1);
+    }
 }

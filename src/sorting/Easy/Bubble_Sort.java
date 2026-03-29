@@ -22,4 +22,24 @@ public class Bubble_Sort {
             if(countSwap == 0) break;
         }
     }
+
+    // This is Recursive Bubble Sort with best Approach
+    public static void recursive_Bubble(int[] arr, int n){
+        // Base Condition
+        if(n == 1) return;
+
+        int count = 0;
+        for(int i = 0;i<n-1;i++){
+            if(arr[i] > arr[i+1]){
+                // swap
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                count++;
+            }
+        }
+        if(count == 0) return;
+
+        recursive_Bubble(arr, n-1);
+    }
 }

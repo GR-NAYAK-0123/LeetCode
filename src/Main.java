@@ -110,6 +110,24 @@ public class Main {
         quick(arr, start, pivotIndex-1);
         quick(arr, pivotIndex+1, end);
     }
+    public static void recursive_Bubble(int[] arr, int n){
+        // Base Condition
+        if(n == 1) return;
+
+        int count = 0;
+        for(int i = 0;i<n-1;i++){
+            if(arr[i] > arr[i+1]){
+                // swap
+                int temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                count++;
+            }
+        }
+        if(count == 0) return;
+
+        recursive_Bubble(arr, n-1);
+    }
     public static void main(String[] args) {
         System.out.println("LeetCode");
 
@@ -124,7 +142,8 @@ public class Main {
         //bubble(arr);
         //insertion(arr);
         //divide(arr, 0, arr.length-1);
-        quick(arr, 0, arr.length-1);
+        //quick(arr, 0, arr.length-1);
+        recursive_Bubble(arr, arr.length);
 
         System.out.println("After sorting");
         for(int value : arr){

@@ -128,10 +128,26 @@ public class Main {
 
         recursive_Bubble(arr, n-1);
     }
+    public static void recursive_insertion(int[] arr, int start){
+        // Base Case
+        if(start == arr.length) return;
+
+        int i = start;
+        while(i > 0 && arr[i] < arr[i-1]){
+            //swap
+            int temp = arr[i];
+            arr[i] = arr[i-1];
+            arr[i-1] = temp;
+            i--;
+        }
+
+        //Calling next function
+        recursive_insertion(arr, start+1);
+    }
     public static void main(String[] args) {
         System.out.println("LeetCode");
 
-        int[] arr = new int[] {20,42,23,19,1};
+        int[] arr = new int[] {20,42,23,19,1,5,56,1,45,32,12};
         System.out.println("Before sorting");
         for(int value : arr){
             System.out.print(value+" ");
@@ -143,7 +159,8 @@ public class Main {
         //insertion(arr);
         //divide(arr, 0, arr.length-1);
         //quick(arr, 0, arr.length-1);
-        recursive_Bubble(arr, arr.length);
+        //recursive_Bubble(arr, arr.length);
+        recursive_insertion(arr, 0);
 
         System.out.println("After sorting");
         for(int value : arr){

@@ -18,4 +18,22 @@ public class Insertion_Sort {
             }
         }
     }
+
+    //This is recursive Insertion Sort which having same time and space complexity but here we are using O(n) stack memory because of recursion
+    public static void recursive_insertion(int[] arr, int start){
+        // Base Case
+        if(start == arr.length) return;
+
+        int i = start;
+        while(i > 0 && arr[i] < arr[i-1]){
+            //swap
+            int temp = arr[i];
+            arr[i] = arr[i-1];
+            arr[i-1] = temp;
+            i--;
+        }
+
+        //Calling next function
+        recursive_insertion(arr, start+1);
+    }
 }

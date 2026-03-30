@@ -1,6 +1,6 @@
 // Problem: Capacity To Ship Packages Within D Days
 // Link: https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
-// Time: O(n) + O(n * log(Sum of the element of the array))
+// Time: O(n) + O(n * log(Sum of the element of the array - Maximum element in the array + 1))
 // Space: O(1)
 
 package binarySearch.Medium;

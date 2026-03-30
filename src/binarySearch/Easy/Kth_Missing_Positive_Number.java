@@ -10,6 +10,17 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Kth_Missing_Positive_Number {
+    // This Approach is a bit better than the last one because it doesn't take any extra space
+    public int findKthPositive1(int[] arr, int k) {
+        int n = arr.length;
+        for(int i = 0;i<n;i++){
+            if(arr[i] <= k) k++;
+            else{
+                return k;
+            }
+        }
+        return k;
+    }
     // It's very brute force approach which takes lots of time and space
     public int findKthPositive(int[] arr, int k) {
         int n = arr.length;

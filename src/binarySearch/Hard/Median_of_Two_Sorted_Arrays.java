@@ -1,7 +1,7 @@
 // Problem: Median of Two Sorted Arrays
 // Link: https://leetcode.com/problems/median-of-two-sorted-arrays/description/
-// Time: O(n)
-// Space: O(n)
+// Time: O(nums1 + nums2)
+// Space: O(nums1 + nums2)
 
 package binarySearch.Hard;
 

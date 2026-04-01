@@ -17,4 +17,16 @@ public class Search_a_2D_Matrix_II {
         }
         return false;
     }
+    // For this approach the time complexity will be O(n + m) and space complexity will be O(1)
+    public boolean searchMatrix1(int[][] matrix, int target) {
+        // This Approach is the best Approach
+        int i = 0;
+        int j = matrix[0].length - 1;
+        while(i < matrix.length && j >= 0){
+            if(matrix[i][j] == target) return true;
+            else if(matrix[i][j] < target) i++;
+            else j--;
+        }
+        return false;
+    }
 }

@@ -21,4 +21,21 @@ public class Search_a_2D_Matrix {
         }
         return false;
     }
+    // This approach is the best Approach which takes log(m * n) time complexity and O(1) space
+    public boolean searchMatrix1(int[][] matrix, int target) {
+        // Best Approach
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        int start = 0;
+        int end = n * m - 1;
+        while(start <= end){
+            int mid = start + (end - start) / 2;
+
+            if(matrix[mid/m][mid%m] == target) return true;
+            else if(matrix[mid/m][mid%m] > target) end = mid - 1;
+            else start = mid + 1;
+        }
+        return false;
+    }
 }

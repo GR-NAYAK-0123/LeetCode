@@ -45,4 +45,38 @@ public class Find_a_Peak_Element_II {
         }
         return new int[]{row, col};
     }
+
+    // This is best approach to solve this problem with time O(n * log(m)) and O(1) space
+    public int[] findPeakGrid2(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+        int start = 0;
+        int end = m - 1;
+        while(start <= end){
+            int mid = start + (end - start) / 2;
+
+            //For finding the row which having maximum value
+            int row = findMaxRow(mat, mid);
+
+            int left = mid - 1 >= 0 ? mat[row][mid-1] : -1;
+            int right = mid + 1 < m ? mat[row][mid+1] : -1;
+
+            if(mat[row][mid] > left && mat[row][mid] > right) return new int[]{row,mid};
+            else if(left > mat[row][mid]) end = mid - 1;
+            else start = mid + 1;
+        }
+        return new int[]{-1, -1};
+    }
+    // This method is to find which row contains maximum value
+    public int findMaxRow(int[][] mat, int col) {
+        int max = -1;
+        int row = -1;
+        for (int i = 0; i < mat.length; i++) {
+            if (mat[i][col] > max) {
+                max = mat[i][col];
+                row = i;
+            }
+        }
+        return row;
+    }
 }

@@ -25,4 +25,24 @@ public class Find_a_Peak_Element_II {
         }
         return new int[]{-1,-1};
     }
+
+    // A bit better approach but not efficient
+    // Here the time complexity will be O(n * m) and space will be O(1)
+    public int[] findPeakGrid1(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+        int max = -1;
+        int row = -1;
+        int col = -1;
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<m;j++){
+                if(mat[i][j] > max){
+                    max = mat[i][j];
+                    row = i;
+                    col = j;
+                }
+            }
+        }
+        return new int[]{row, col};
+    }
 }

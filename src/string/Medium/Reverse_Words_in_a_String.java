@@ -76,4 +76,25 @@ public class Reverse_Words_in_a_String {
         }
         return result.toString().substring(0,result.length());
     }
+    // Best Approach which took O(n) time and O(1) space
+    public String reverseWords2(String s) {
+        StringBuilder result = new StringBuilder();
+        int i = 0;
+        String temp = "";
+        while(i < s.length()){
+            while(i < s.length() && s.charAt(i) == ' '){
+                i++;
+            }
+            temp = "";
+            while(i < s.length() && s.charAt(i) != ' '){
+                temp += s.charAt(i);
+                i++;
+            }
+            if(temp.isEmpty()){
+                break;
+            }
+            result.insert(0, temp + " ");
+        }
+        return result.toString().substring(0, result.length()-1);
+    }
 }

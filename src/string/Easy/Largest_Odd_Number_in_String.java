@@ -8,6 +8,10 @@ package string.Easy;
 public class Largest_Odd_Number_in_String {
     //Basic approach
     public String largestOddNumber(String num) {
+        /*
+           Here we are traversing from right to left and checking if there is any number which is not divisible by
+           2 means odd then return from start to till that index
+        */
         for(int i = num.length()-1;i>=0;i--){
             char curr = num.charAt(i);
 

@@ -21,4 +21,12 @@ public class Largest_Odd_Number_in_String {
         }
         return "";
     }
+
+    // Here is the same approach but line of code is very less
+    public String largestOddNumber1(String num) {
+        for(int i = num.length()-1;i>=0;i--){
+            if((num.charAt(i) - '0') % 2 != 0) return num.substring(0, i+1);
+        }
+        return "";
+    }
 }

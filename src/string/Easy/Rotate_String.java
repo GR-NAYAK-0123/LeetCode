@@ -21,7 +21,10 @@ public class Rotate_String {
         }
         return false;
     }
-    //Best approach to solve this problem which takes O(n) time and O(2 * size of first string) space
+    /*
+        Best approach to solve this problem which takes O(n * 2) time because of this substring search
+        and O(2 * size of first string) space
+    */
     public boolean rotateString1(String s, String goal) {
         if(s.length() != goal.length()) return false;
         return (s + s).contains(goal);

@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -8,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("LeetCode");
 
-        String s1 = "Ram";
-        String s2 = "Ravan";
-        System.out.println(s1.compareTo(s2));
+        HashMap<Character, Character> map = new HashMap<>();
+        map.put('a', 'b');
+        System.out.println(map.containsValue('b'));
     }
 }

@@ -1,7 +1,7 @@
 // Problem: Rotate String
 // Link: https://leetcode.com/problems/rotate-string/description/
 // Time: O(n)
-// Space: O(1)
+// Space: O(n) This space is for the StringBuilder
 
 package string.Easy;
 

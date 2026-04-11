@@ -3,7 +3,7 @@
 // Time: O(1)
 // Space: O(1)
 
-package Context.Biweekly.Context_180;
+package Context.Biweekly.Context_180.Easy;
 
 public class Traffic_Signal_Color {
     // It's very easy problem to solve, It took O(1) time and space

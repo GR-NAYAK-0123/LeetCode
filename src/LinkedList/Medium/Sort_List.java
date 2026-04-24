@@ -26,4 +26,51 @@ public class Sort_List {
         }
         return head;
     }
+    /*
+       This is another way of solving this problem, by using merge sort approach
+       It will take O((n + n/2) log(n)) time and O(1) space
+     */
+    public ListNode findMiddle(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public ListNode mergeSort(ListNode head){
+        if(head == null || head.next == null) return head;
+
+        ListNode middle = findMiddle(head);
+        ListNode middleNext = middle.next;
+        middle.next = null;
+
+        ListNode fastHalf = mergeSort(head);
+        ListNode secondHalf = mergeSort(middleNext);
+        return merge(fastHalf, secondHalf);
+    }
+    public ListNode merge(ListNode fast, ListNode second){
+        ListNode newHead = new ListNode(-1);
+        ListNode temp = newHead;
+        while(fast != null && second != null){
+            if(fast.val < second.val){
+                temp.next = fast;
+                temp = temp.next;
+                fast = fast.next;
+            }
+            else{
+                temp.next = second;
+                temp = temp.next;
+                second = second.next;
+            }
+        }
+        if(fast == null) temp.next = second;
+        else temp.next = fast;
+
+        return newHead.next;
+    }
+    public ListNode sortList_1(ListNode head) {
+        return mergeSort(head);
+    }
 }

@@ -5,6 +5,8 @@
 
 package LinkedList.Easy;
 
+import java.util.HashMap;
+
 public class Intersection_of_Two_Linked_Lists {
     // Basic approach to solve this problem
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -48,6 +50,24 @@ public class Intersection_of_Two_Linked_Lists {
                 temp = temp.next;
                 temp1 = temp1.next;
             }
+        }
+        return null;
+    }
+    /*
+       This is brute force approach by using HashMap and it took O(n) + O(m) time and O(n) space
+     */
+    public ListNode getIntersectionNode_1(ListNode headA, ListNode headB) {
+        HashMap<ListNode, Integer> map = new HashMap<>();
+        ListNode temp = headA;
+        while(temp != null){
+            map.put(temp, 1);
+            temp = temp.next;
+        }
+
+        temp = headB;
+        while(temp != null){
+            if(map.containsKey(temp)) return temp;
+            temp = temp.next;
         }
         return null;
     }

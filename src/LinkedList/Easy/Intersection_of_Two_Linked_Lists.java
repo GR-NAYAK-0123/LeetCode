@@ -57,4 +57,19 @@ public class Intersection_of_Two_Linked_Lists {
         }
         return null;
     }
+    // This is the best approach to solve this problem, It took O(n + m) time and O(1) space
+    public ListNode getIntersectionNode_2(ListNode headA, ListNode headB) {
+        ListNode temp1 = headA;
+        ListNode temp2 = headB;
+        while(temp1 != temp2){
+            temp1 = temp1.next;
+            temp2 = temp2.next;
+
+            if(temp1 == temp2) return temp1;
+
+            if(temp1 == null) temp1 = headB;
+            if(temp2 == null) temp2 = headA;
+        }
+        return temp1;
+    }
 }

@@ -28,4 +28,37 @@ public class String_to_Integer_atoi {
         }
         return (sign == 1) ? result : -result;
     }
+
+    // This is the another approach by using recursion
+    // It takes O(n) time and O(n) recursive stack space
+    public int get_result(String s, int i, int sign, int result){
+        if(i == s.length()){
+            return sign == -1 ? -result : result;
+        }
+        else if(s.charAt(i) == ' '){
+            if(i-1 >= 0 && s.charAt(i-1) != ' ') return sign == -1 ? -result : result;
+            return get_result(s, i+1, sign, result);
+        }
+        else if(s.charAt(i) == '-' || s.charAt(i) == '+'){
+            if(i-1 >= 0 && s.charAt(i-1) != ' '){
+                return sign == -1 ? -result : result;
+            }
+            sign = s.charAt(i) == '-' ? -1 : 1;
+            return get_result(s, i+1, sign, result);
+        }
+        else if(s.charAt(i) - '0' >= 0 && s.charAt(i) - '0' <= 9){
+            if(result > (Integer.MAX_VALUE - (s.charAt(i) - '0')) / 10){
+                return sign == -1 ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            }
+            result = s.charAt(i) - '0' + (result * 10);
+            return get_result(s, i+1, sign, result);
+        }
+        else{
+            return sign == -1 ? -result : result;
+        }
+
+    }
+    public int myAtoi_1(String s) {
+        return get_result(s, 0, 1, 0);
+    }
 }
